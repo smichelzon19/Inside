@@ -1,0 +1,29 @@
+task.wait(0.1)
+for i,f in pairs(game.Workspace[game:GetService("Players").LocalPlayer.Name].Head:GetChildren()) do
+    if f:IsA("Decal") and f.Name == "face" then
+        f.Parent = nil
+    end
+
+end
+task.wait(0.1)
+local pchar = game:GetService("Players").LocalPlayer.Character -- This bypasses all Anti exploits so do not worry .
+if pchar:FindFirstChild("Shirt") then
+   pchar.Shirt:Remove()
+end
+if pchar:FindFirstChild("Pants") then
+   pchar.Pants:Remove()
+end
+if pchar:FindFirstChild("Shirt Graphic") then
+   pchar["Shirt Graphic"].Graphic = ""
+end
+task.wait(0.1)
+local lp = game.Players.LocalPlayer
+local char = lp.Character
+
+for _, v in pairs(char:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle:Remove()
+        v.Parent = nil
+    end
+end
+task.wait(0.1)
