@@ -1,0 +1,53 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Turtle-Brand/Turtle-Lib/main/source.lua"))()
+
+local window = library:Window("4479's Developer Hub")
+
+window:Label("None of these scripts are mine.", Color3.fromRGB(127, 143, 166))
+window:Label("Every script loads an Anti AFK.", Color3.fromRGB(127, 143, 166))
+
+window:Button("Dark Dex", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+    print("Dark Dex Successfully Loaded!")
+    AntiAfk()
+end)
+
+window:Button("Infinite Yield", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    print("Infinite Yield Successfully Loaded!")
+    AntiAfk()
+end)
+
+window:Button("Simple Spy", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
+    print("Simple Spy Successfully Loaded!")
+    AntiAfk()
+end)
+
+window:Button("Get Position", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/smichelzon19/Holdings/main/Get%20Position"))()
+    print("Get Position Successfully Loaded!")
+    AntiAfk()
+end)
+
+window:Button("Destroy", function()
+    print("4479's Developer Hub Successfully Destroyed!")
+    window:Destroy()
+end)
+
+function AntiAfk()
+    spawn (function()
+        while true do
+
+            local vu = game:GetService("VirtualUser")
+            game:GetService("Players").LocalPlayer.Idled:connect(function()
+            vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+            wait(1)
+            vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+            end)
+
+        task.wait()
+        end
+    end)
+end
+
+AntiAfk()
